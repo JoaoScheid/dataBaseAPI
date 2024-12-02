@@ -8,4 +8,9 @@ router.get('/listarUsers', TaskController.listarUsers);
 router.get('/listarUser/:id', TaskController.listarUser);
 router.put('/atualizar/user/:id', TaskController.atualizarUser)
 router.delete('/remover/user/:id', TaskController.removerUser)
+router.post('/novaImagem', TaskController.novaImagem);
+router.get('/listarImagens', TaskController.listarImagens);
+router.get('/listarImagem/:id', TaskController.listarImagem);
+router.put('/atualizar/imagem/:id', TaskController.atualizarImagem)
+router.delete('/remover/imagem/:id', TaskController.removerImagem)
 module.exports = router;
