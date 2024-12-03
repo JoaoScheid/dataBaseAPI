@@ -1,7 +1,7 @@
 const database = require('./database/connection');
 
-class TaskController {
-    novaTarefa(request, response) {
+class UserController {
+    novoUser(request, response) {
         const { id, nome, data_criacao } = request.body;
         
         console.log(id, nome, data_criacao);
@@ -14,8 +14,14 @@ class TaskController {
                 response.json({ message: "Usuário criado com sucesso!" });
             })
             .catch(error => {
+                
                 console.log(error);
-                response.status(500).json({ message: "Erro ao criar usuário", error: error.message });
+            if(!nome){
+                response.status(500).json({ message: "Nome é obrigatorio", error: error.message });     
+            }
+            if(!data_criacao){
+                response.status(500).json({ message: "Data é obrigatorio", error: error.message });     
+            }
             });
     }
 
@@ -143,8 +149,6 @@ class TaskController {
     removerImagem(request, response) {
         const {id} = request.params;
         
-        
-
         database.where({id}).del().table("Imagem").then(data => {
                 response.json({message:"Imagem removida com sucesso"});
             })
@@ -155,4 +159,4 @@ class TaskController {
     }
 }
 
-module.exports = new TaskController();
+module.exports = new UserController();

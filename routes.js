@@ -1,16 +1,16 @@
 const connection = require('./database/connection');
 const express = require('express');
 const router = express.Router();
-const TaskController = require('./TaskController');
+const UserController = require('./UserController');
 
-router.post('/novoUser', TaskController.novaTarefa);
-router.get('/listarUsers', TaskController.listarUsers);
-router.get('/listarUser/:id', TaskController.listarUser);
-router.put('/atualizar/user/:id', TaskController.atualizarUser)
-router.delete('/remover/user/:id', TaskController.removerUser)
-router.post('/novaImagem', TaskController.novaImagem);
-router.get('/listarImagens', TaskController.listarImagens);
-router.get('/listarImagem/:id', TaskController.listarImagem);
-router.put('/atualizar/imagem/:id', TaskController.atualizarImagem)
-router.delete('/remover/imagem/:id', TaskController.removerImagem)
+router.post('/novoUser', UserController.novoUser);
+router.get('/listarUsers', UserController.listarUsers);
+router.get('/listarUser/:id', UserController.listarUser);
+router.put('/atualizar/user/:id', UserController.atualizarUser)
+router.delete('/remover/user/:id', UserController.removerUser)
+router.post('/novaImagem', UserController.novaImagem);
+router.get('/listarImagens', UserController.listarImagens);
+router.get('/listarImagem/:id', UserController.listarImagem);
+router.put('/atualizar/imagem/:id', UserController.atualizarImagem)
+router.delete('/remover/imagem/:id', UserController.removerImagem)
 module.exports = router;
