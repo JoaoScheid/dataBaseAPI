@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 const cors = require('cors');
-const router = require('./routes');
+const userRoutes = require('./Routes/UserRoute');
+const imagesRoutes = require('./Routes/ImageRoute')
 app.use(cors());
-app.use(router);
+app.use(userRoutes);
+app.use(imagesRoutes);
 
 
 
